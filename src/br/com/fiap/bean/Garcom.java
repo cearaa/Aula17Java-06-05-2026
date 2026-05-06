@@ -17,5 +17,16 @@ public class Garcom extends Funcionario{
     }
 
     //Métodos getters/setters
+    public float getGorjeta() {
+        return gorjeta;
+    }
+    public void setGorjeta(float gorjeta) {
+        this.gorjeta = gorjeta;
+    }
 
+    //Métodos da classe
+    @Override
+    public float calcularSalario() {
+        return super.calcularSalario() + gorjeta;
+    }
 }
