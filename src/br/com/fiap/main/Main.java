@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
     public static void main(String[] args) {
-        String auxiliar, nome, exibe, escolha = "sim";
+        String auxiliar, nome, exibe = "", escolha = "sim";
         float valorHoraDeTrabalho, salario;
         LocalDate dataDeNascimento;
 
@@ -18,11 +18,14 @@ public class Main {
             try {
                 nome = JOptionPane.showInputDialog("Dígite seu nome: ");
                 auxiliar = JOptionPane.showInputDialog("Digite sua data de Nascimento ( yyyy/MM/dd ): ");
+                if (auxiliar == null) break;
                 DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("yyyy/MM/dd");
                 dataDeNascimento = LocalDate.parse(auxiliar, formatoEntrada);
                 auxiliar = JOptionPane.showInputDialog("Dígite valor hora de trabalho: ");
+                if (auxiliar == null) break;
                 valorHoraDeTrabalho = Float.parseFloat(auxiliar);
                 auxiliar = JOptionPane.showInputDialog("Qual é o tipo de Funcionário? \n1.Funcionário normal \n2.Garçom \n3.Gerente");
+                if (auxiliar == null) break;
                 int opcao = Integer.parseInt(auxiliar);
                 DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 switch (opcao){
@@ -33,6 +36,7 @@ public class Main {
                         break;
                     case 2:
                         auxiliar = JOptionPane.showInputDialog("Dígite o valor da gorjeta: ");
+                        if (auxiliar == null) break;
                         float gorjeta = Float.parseFloat(auxiliar);
                         Garcom garcom = new Garcom(nome, dataDeNascimento, valorHoraDeTrabalho, gorjeta);
                         salario = garcom.calcularSalario();
@@ -40,6 +44,7 @@ public class Main {
                         break;
                     case 3:
                         auxiliar = JOptionPane.showInputDialog("Dígite o valor do bonus: ");
+                        if (auxiliar == null) break;
                         float bonus = Float.parseFloat(auxiliar);
                         Gerente gerente = new Gerente(nome, dataDeNascimento, valorHoraDeTrabalho, bonus);
                         salario = gerente.calcularSalario();
