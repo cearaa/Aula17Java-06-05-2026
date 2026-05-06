@@ -1,21 +1,25 @@
 package br.com.fiap.main;
 
+import br.com.fiap.bean.Funcionario;
+
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
         String auxiliar, nome, exibe, escolha = "sim";
-        float valorHora, salario;
+        float valorHoraDeTrabalho, salario;
 
         while (escolha.equalsIgnoreCase("sim")){
             try {
                 nome = JOptionPane.showInputDialog("Dígite seu nome: ");
                 auxiliar = JOptionPane.showInputDialog("Dígite valor hora de trabalho: ");
-                valorHora = Float.parseFloat(auxiliar);
+                valorHoraDeTrabalho = Float.parseFloat(auxiliar);
                 auxiliar = JOptionPane.showInputDialog("Qual é o tipo de Funcionário? \n1.Funcionário normal \n2.Garçom \n3.Gerente");
                 int opcao = Integer.parseInt(auxiliar);
                 switch (opcao){
                     case 1:
+                        Funcionario normal = new Funcionario(nome, valorHoraDeTrabalho);
+
                         break;
                     case 2:
                         break;

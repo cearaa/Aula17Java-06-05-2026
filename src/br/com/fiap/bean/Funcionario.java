@@ -15,12 +15,11 @@ public class Funcionario {
     //Construtor com parametro
     public Funcionario(String nome, LocalDate dataDeNascimento, float valorHoraDeTrabalho) {
         this.nome = nome;
-        this.dataDeNascimento = dataDeNascimento;
-        this.valorHoraDeTrabalho = valorHoraDeTrabalho;
+        setDataDeNascimento(dataDeNascimento);
+        setValorHoraDeTrabalho(valorHoraDeTrabalho);
     }
 
     //Métodos getters/setters
-
     public String getNome() {return nome;}
     public void setNome(String nome) {this.nome = nome;}
     public LocalDate getDataDeNascimento() {return dataDeNascimento;}
