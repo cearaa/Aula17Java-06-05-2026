@@ -17,17 +17,17 @@ public class Main {
         while (escolha.equalsIgnoreCase("sim")){
             try {
                 nome = JOptionPane.showInputDialog("Dígite seu nome: ");
+                if (nome == null) break;
                 auxiliar = JOptionPane.showInputDialog("Digite sua data de Nascimento ( yyyy/MM/dd ): ");
                 if (auxiliar == null) break;
-                DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-                dataDeNascimento = LocalDate.parse(auxiliar, formatoEntrada);
+                DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                dataDeNascimento = LocalDate.parse(auxiliar, formato);
                 auxiliar = JOptionPane.showInputDialog("Dígite valor hora de trabalho: ");
                 if (auxiliar == null) break;
                 valorHoraDeTrabalho = Float.parseFloat(auxiliar);
                 auxiliar = JOptionPane.showInputDialog("Qual é o tipo de Funcionário? \n1.Funcionário normal \n2.Garçom \n3.Gerente");
                 if (auxiliar == null) break;
                 int opcao = Integer.parseInt(auxiliar);
-                DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 switch (opcao){
                     case 1:
                         Funcionario normal = new Funcionario(nome, dataDeNascimento, valorHoraDeTrabalho);
