@@ -14,5 +14,18 @@ public class Gerente extends Funcionario{
         super(nome, dataDeNascimento, valorHoraDeTrabalho);
         this.bonus = bonus;
     }
+    //Métodos getters/setters
 
+    public float getBonus() {
+        return bonus;
+    }
+    public void setBonus(float bonus) {
+        this.bonus = bonus;
+    }
+
+    //Métodos da classe
+    @Override
+    public float calcularSalario() {
+        return super.calcularSalario * (1 + bonus/100);
+    }
 }
