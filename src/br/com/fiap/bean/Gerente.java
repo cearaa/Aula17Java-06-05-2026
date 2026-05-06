@@ -4,5 +4,6 @@ public class Gerente extends Funcionario{
     //Atributos
     private float bonus;
 
-    //
+    //Construtor vazio
+
 }
