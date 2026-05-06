@@ -5,5 +5,7 @@ public class Gerente extends Funcionario{
     private float bonus;
 
     //Construtor vazio
+    public Gerente(){}
 
+    //Construtor com parametro
 }
