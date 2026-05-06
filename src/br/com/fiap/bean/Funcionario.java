@@ -24,7 +24,14 @@ public class Funcionario {
     public void setNome(String nome) {this.nome = nome;}
     public LocalDate getDataDeNascimento() {return dataDeNascimento;}
     public void setDataDeNascimento(LocalDate dataDeNascimento) {
+        LocalDate dataMinima = LocalDate.of(1900, 1, 1);
+        LocalDate hoje = LocalDate.now();
+        if (dataDeNascimento.isAfter(dataMinima) && dataDeNascimento.isBefore(hoje)) {
+            this.dataDeNascimento = dataDeNascimento;
+        } else {
+            System.out.println("Data inválida!");
         }
+    }
     public float getValorHoraDeTrabalho() {return valorHoraDeTrabalho;}
     public void setValorHoraDeTrabalho(float valorHoraDeTrabalho) {this.valorHoraDeTrabalho = valorHoraDeTrabalho;}
 
