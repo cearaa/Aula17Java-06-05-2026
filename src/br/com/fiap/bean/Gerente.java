@@ -26,6 +26,6 @@ public class Gerente extends Funcionario{
     //Métodos da classe
     @Override
     public float calcularSalario() {
-        return super.calcularSalario() * (1 + bonus / 100);return super.calcularSalario() * (1 + bonus / 100);return super.calcularSalario() * (1 + bonus / 100);
+        return super.calcularSalario() * (1 + bonus / 100);
     }
 }
