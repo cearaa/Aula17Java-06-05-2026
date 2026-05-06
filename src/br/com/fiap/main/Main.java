@@ -18,7 +18,8 @@ public class Main {
             try {
                 nome = JOptionPane.showInputDialog("Dígite seu nome: ");
                 auxiliar = JOptionPane.showInputDialog("Digite sua data de Nascimento ( yyyy/MM/dd ): ");
-                dataDeNascimento = LocalDate.parse(auxiliar);
+                DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                dataDeNascimento = LocalDate.parse(auxiliar, formatoEntrada);
                 auxiliar = JOptionPane.showInputDialog("Dígite valor hora de trabalho: ");
                 valorHoraDeTrabalho = Float.parseFloat(auxiliar);
                 auxiliar = JOptionPane.showInputDialog("Qual é o tipo de Funcionário? \n1.Funcionário normal \n2.Garçom \n3.Gerente");
