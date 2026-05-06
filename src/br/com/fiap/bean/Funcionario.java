@@ -1,6 +1,7 @@
 package br.com.fiap.bean;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Funcionario {
     //Atributos
@@ -40,6 +41,7 @@ public class Funcionario {
         return (valorHoraDeTrabalho * 40) * 4;
     }
     public int calcularidade(){
-        return;
+        LocalDate hoje = LocalDate.now();
+        return Period.between(this.dataDeNascimento, hoje).getYears();
     }
 }
