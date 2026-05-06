@@ -27,20 +27,22 @@ public class Funcionario {
     public void setDataDeNascimento(LocalDate dataDeNascimento) {
         LocalDate dataMinima = LocalDate.of(1900, 1, 1);
         LocalDate hoje = LocalDate.now();
-        if (dataDeNascimento.isAfter(dataMinima) && dataDeNascimento.isBefore(hoje)) {
+        if (!dataDeNascimento.isBefore(dataMinima) && (!dataDeNascimento.isAfter(hoje))) {
             this.dataDeNascimento = dataDeNascimento;
         } else {
             System.out.println("Data inválida!");
         }
     }
     public float getValorHoraDeTrabalho() {return valorHoraDeTrabalho;}
-    public void setValorHoraDeTrabalho(float valorHoraDeTrabalho) {this.valorHoraDeTrabalho = valorHoraDeTrabalho;}
+    public void setValorHoraDeTrabalho(float valorHoraDeTrabalho) {
+        if (valorHoraDeTrabalho > 0)
+            this.valorHoraDeTrabalho = valorHoraDeTrabalho;}
 
     //Métodos da classe
     public float calcularSalario(){
         return (valorHoraDeTrabalho * 40) * 4;
     }
-    public int calcularidade(){
+    public int calcularIdade(){
         LocalDate hoje = LocalDate.now();
         return Period.between(this.dataDeNascimento, hoje).getYears();
     }
